@@ -16,65 +16,22 @@
       <div class="row full-height justify-content-center">
         <div class="col-12 text-center align-self-center py-5">
           <div class="section pb-5 pt-5 pt-sm-2 text-center">
-            <h6 class="mb-0 pb-3"><span>Cadastrar</span><span>Log In</span></h6>
-            <input
-              class="checkbox"
-              type="checkbox"
-              id="reg-log"
-              name="reg-log"
-            />
-            <label for="reg-log"></label>
             <div class="card-3d-wrap mx-auto">
               <div class="card-3d-wrapper">
-                <div class="card-back">
-                  <div class="center-wrap">
-                    <div class="section text-center">
-                      <h4 class="mb-4 pb-3">Log In</h4>
-                      <div class="form-group">
-                        <input
-                        [(ngModel)]="user.email"
-                          type="email"
-                          name="logemail"
-                          class="form-style"
-                          placeholder="Seu Email"
-                          id="emailLogin"
-                          autocomplete="off"
-                        />
-                        <i
-                          class="fa fa-at input-icon uil uil-at"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="form-group mt-2">
-                        <input
-                        [(ngModel)]="user.senha"
-                          type="password"
-                          name="senhaLogin"
-                          class="form-style"
-                          placeholder="Sua Senha"
-                          id="logpass"
-                          autocomplete="off"
-                        />
-                        <i class="fa fa-lock input-icon uil uil-lock-alt"></i>
-                      </div>
-                      <button type="submit" class="btn mt-4" (click)="entrar()">Entrar</button>
-                      <p class="mb-0 mt-4 text-center">
-                        <a href="#0" class="link">Esqueceu sua senha?</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
                 <div class="card-front">
                   <div class="center-wrap">
                     <div class="section text-center">
-                      <h4 class="mb-4 pb-3">Cadastrar</h4>
+                      <h4 class="mb-4 pb-3">Editar Usuário</h4>
                       <div class="form-group">
+                        <!-- {{
+                        item.user.nome
+                        }} -->
+
                         <input
-                          [(ngModel)]="user.nome"
+                        [(ngModel)]="nome"
                           type="text"
                           name="nome"
                           class="form-style"
-                          placeholder="Seu Nome Completo"
                           id="nomeCadastro"
                           autocomplete="off"
                         />
@@ -83,7 +40,7 @@
 
                       <div class="form-group mt-2">
                         <input
-                          [(ngModel)]="user.email"
+                        [(ngModel)]="email"
                           type="email"
                           name="logemail"
                           class="form-style"
@@ -96,7 +53,7 @@
 
                       <div class="form-group mt-2">
                         <input
-                          [(ngModel)]="user.senha"
+                        [(ngModel)]="senha"
                           type="password"
                           name="logpass"
                           class="form-style"
@@ -106,7 +63,20 @@
                         />
                         <i class="fa fa-lock input-icon uil uil-lock-alt"></i>
                       </div>
-                      <button type="submit" class="btn mt-4" (click)="cadastrar()">CADASTRAR</button>
+                      <button
+                        type="submit"
+                        class="btn btn-danger mt-4 mr-4"
+                        (click)="editarUsuario()"
+                      >
+                        Alterar
+                      </button>
+                      <button
+                        type="submit"
+                        class="btn mt-4" style="background-color: red;"
+                        (click)="deletarUsuario(id)"
+                      >
+                        Excluir
+                      </button>
                     </div>
                   </div>
                 </div>
